@@ -143,6 +143,54 @@ namespace ConsoleTestApp
             }
         }
 
+        //Write a C# Sharp program that takes userid and password as input (type string).
+        //After 3 wrong attempts, user will be rejected
+        public static void LoginUser()
+        {
+            string check = null;
+            bool t = false;
+            int count = 0;
+            Start:
+            Console.WriteLine("Input account: ");
+            var a = Console.ReadLine();
+            Console.WriteLine("Input password: ");
+            var b = Console.ReadLine();
+
+            if (a == "admin" && b == "password")
+            {
+                Console.WriteLine("Success");
+            }
+            else
+            {
+                count++;
+                if (count >= 3)
+                {
+                    Console.WriteLine($"Your fault count: {count}");
+                    Console.WriteLine("You were blocked");
+                }
+                else
+                {
+                    Console.WriteLine($"Your fault count: {count}");
+                    Console.WriteLine("You input wrong account or password\nDo you want to try again? (y/n)");
+                    inputYN:
+                    check = Console.ReadLine();
+                    if (check == "y")
+                    {
+                        goto Start;
+                    }
+                    else if (check == "n")
+                    {
+                        Console.WriteLine("System is willing out");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong input, please check carefully (y/n)");
+                        goto inputYN;
+                    }
+                }
+            }
+        }
+
         public static void Test()
         {
             //double[] a = new double() { null, 121212.2, 23232, 232354 };
@@ -150,10 +198,7 @@ namespace ConsoleTestApp
 
         static void Main(string[] args)
         {
-            int t = 6;
-            HinhTamGiac(t);
-            //List<int> test = new List<int> { 15, 2, 3, 4, 15 };
-            //Check15(test);
+            LoginUser();
         }
 
     }
