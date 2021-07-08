@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace ConsoleTestApp
 {
-    class Program
+    public class Program
     {
         //a program that show how many times a char appear.
         public static void CountCharInput(string a) 
@@ -63,7 +63,7 @@ namespace ConsoleTestApp
             }
         }
 
-        //Write a C# Sharp program to remove all "a" in each string in given list of strings and return the new string
+        //Write a C Sharp program to remove all "a" in each string in given list of strings and return the new string
         public static void RemoveACharacter(List<string> vs)
         {
             ArrayList temp = new ArrayList();
@@ -92,10 +92,69 @@ namespace ConsoleTestApp
             }
         }
 
+        //Write a C# Sharp program to create a new list from a given list of integers
+        //where each integer multiplied by itself three times
+        public static void MultipleThreeTimes(List<int> listInput)
+        {
+            ArrayList arrNew = new ArrayList();
+            foreach(var r in listInput)
+            {
+                Convert.ToInt32(r);
+                arrNew.Add(r * r * r);
+            }
+            Console.Write("New list is: ");
+            foreach (var a in arrNew)
+            {
+                Console.Write(a + " ");
+            }
+        }
+
+        //Write a C# Sharp program to check a given array (length will be at least 2) of integers
+        //and return true if there are two values 15, 15 next to each other
+        public static bool Check15(List<int> vs)
+        {
+            bool result;
+            ArrayList t = new ArrayList();
+            for (int i = 0; i < vs.Count - 1; i++)
+            {
+                if(vs[i] == vs[i+1] && vs[i] == 15)
+                {
+                    result = true;
+                    Console.Write(result);
+                    return result;
+                }
+            }
+            result = false;
+            Console.Write(result);
+            return result;
+        }
+
+        //Write a C# Sharp program that takes a number and a width also a number,
+        //as input and then displays a triangle of that width, using that number.
+        public static void HinhTamGiac(int a)
+        {
+            for (int i = 0; i <= a; i++)
+            {
+                for(int j = i + 1; j <= a; j++)
+                {
+                    Console.Write(a);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void Test()
+        {
+            //double[] a = new double() { null, 121212.2, 23232, 232354 };
+        }
+
         static void Main(string[] args)
         {
-            List<string> test = new List<string> { "abc", "cdaef", "js", "php" };
-            RemoveACharacter(test);
+            int t = 6;
+            HinhTamGiac(t);
+            //List<int> test = new List<int> { 15, 2, 3, 4, 15 };
+            //Check15(test);
         }
+
     }
 }
