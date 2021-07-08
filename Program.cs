@@ -148,7 +148,6 @@ namespace ConsoleTestApp
         public static void LoginUser()
         {
             string check = null;
-            bool t = false;
             int count = 0;
             Start:
             Console.WriteLine("Input account: ");
@@ -191,6 +190,57 @@ namespace ConsoleTestApp
             }
         }
 
+        public static void Caculator()
+        {
+            double a, b = 0;
+            string operation = null;
+            Console.WriteLine("Input first number: ");
+            a = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Input operation: ");
+            operation = Console.ReadLine();
+            Console.WriteLine("Input second number: ");
+            b = Convert.ToDouble(Console.ReadLine());
+            switch (operation)
+            {
+                case "-":
+                    Console.WriteLine($"{a} {operation} {b} = {a - b}");
+                    break;
+                case "*":
+                    Console.WriteLine($"{a} {operation} {b} = {a * b}");
+                    break;
+                case "/":
+                    Console.WriteLine($"{a} {operation} {b} = {a / b}");
+                    break;
+                default:
+                    Console.WriteLine($"{a} {operation} {b} = {a + b}");
+                    break;
+            }
+                
+        }
+
+        public static double LargestNumber(List<double> list)
+        {
+            double value = 0;
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                if (list[i] > list[i + 1])
+                {
+                    value = list[i];
+                    list[i] = list[i + 1];
+                    list[i + 1] = value;
+                } else if(list[i] < list[i + 1])
+                {
+                    value = list[i+ 1];
+                }
+                else
+                {
+                    value = list[i];
+                }
+            }
+            Console.WriteLine(value);
+            return value;
+        }
+
         public static void Test()
         {
             //double[] a = new double() { null, 121212.2, 23232, 232354 };
@@ -198,7 +248,15 @@ namespace ConsoleTestApp
 
         static void Main(string[] args)
         {
-            LoginUser();
+            //double b = 322.2;
+            //List<Double> a = new List<double>(){ 1.5, 1.6, 16, 56, 322, 96, -1.5 };
+            //a.Add(b);
+            //foreach(var r in a)
+            //{
+            //    Console.Write(r + " ");
+            //}
+            //Console.WriteLine();
+            //LargestNumber(a);
         }
 
     }
