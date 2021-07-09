@@ -190,6 +190,7 @@ namespace ConsoleTestApp
             }
         }
 
+        
         public static void Caculator()
         {
             double a, b = 0;
@@ -251,8 +252,6 @@ namespace ConsoleTestApp
 
         static void Main(string[] args)
         {
-            //LoginUser();
-            Caculator();
             //double b = 322.2;
             //List<Double> a = new List<double>(){ 1.5, 1.6, 16, 56, 322, 96, -1.5 };
             //a.Add(b);
