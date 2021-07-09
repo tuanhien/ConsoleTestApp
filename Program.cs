@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+
 
 namespace ConsoleTestApp
 {
@@ -151,9 +153,9 @@ namespace ConsoleTestApp
             int count = 0;
             Start:
             Console.WriteLine("Input account: ");
-            var a = Console.ReadLine();
+            var a = Console.ReadLine().Trim();
             Console.WriteLine("Input password: ");
-            var b = Console.ReadLine();
+            var b = Console.ReadLine().Trim();
 
             if (a == "admin" && b == "password")
             {
@@ -245,6 +247,146 @@ namespace ConsoleTestApp
             return value;
         }
 
+        //Write a program in C# Sharp which is a Menu-Driven Program to perform a simple calculation
+        public static void SimpleCaculate()
+        {
+            string temp;
+            float a, b;
+            int oper;
+            string value1 = "Addition", value2 = "Substraction", value3 = "Multiplication", value4 = "Division", value5 = "Exit";
+            try
+            {
+            //Check input A
+            StartA:
+                Console.WriteLine("Input number");
+                temp = Console.ReadLine();
+                if (!float.TryParse(temp, out a))
+                {
+                    Console.WriteLine("Wrong input, do you want to try again or not? (y/n)");
+                    temp = Console.ReadLine();
+                AskA:
+                    if (temp == "y")
+                    {
+                        goto StartA;
+                    }
+                    else if (temp == "n")
+                    {
+                        goto End;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong, please check again (y/n)");
+                        temp = Console.ReadLine();
+                        goto AskA;
+                    }
+                }
+                a = float.Parse(temp);
+
+                //Check input B
+                StartB:
+                Console.WriteLine("Input number 2:");
+                temp = Console.ReadLine();
+                if (!float.TryParse(temp, out b))
+                {
+                    Console.WriteLine("Wrong input, do you want to try again or not? (y/n)");
+                    temp = Console.ReadLine();
+                AskB:
+                    if (temp == "y")
+                    {
+                        goto StartB;
+                    }
+                    else if (temp == "n")
+                    {
+                        goto End;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong, please check again (y/n)");
+                        temp = Console.ReadLine();
+                        goto AskB;
+                    }
+                }
+
+                //Check input C
+                Console.WriteLine("Here are the options:");
+                List<string> arrListMenu = new List<string>() { $"1-{value1}.", $"2-{value2}.", $"3-{value3}.", $"4-{value4}.", $"5-{value5}." };
+                foreach (var r in arrListMenu)
+                {
+                    Console.WriteLine(r);
+                }
+
+                StartC:
+                Console.WriteLine("Input your choice: ");
+                temp = Console.ReadLine();
+                //Check input in range (1:5)
+                if (!int.TryParse(temp, out oper))
+                {
+                    if(Convert.ToInt32(Console.ReadLine()) < 1 && Convert.ToInt32(Console.ReadLine()) > 5){}
+                    else
+                    {
+                        Console.WriteLine("Wrong input, do you want to try again or not? (y/n)");
+                        temp = Console.ReadLine();
+                    AskC:
+                        if (temp == "y")
+                        {
+                            goto StartC;
+                        }
+                        else if (temp == "n")
+                        {
+                            goto End;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong, please check again (y/n)");
+                            temp = Console.ReadLine();
+                            goto AskC;
+                        }
+                    }
+                }
+
+                switch (oper)
+                {
+                    case 1:
+                        Console.WriteLine($"The {value1} of {a} and {b} is: {a + b}");
+                        break;
+                    case 2:
+                        Console.WriteLine($"The {value2} of {a} and {b} is: {a - b}");
+                        break;
+                    case 3:
+                        Console.WriteLine($"The {value3} of {a} and {b} is: {a * b}");
+                        break;
+                    case 4:
+                        Console.WriteLine($"The {value4} of {a} and {b} is: {a / b}");
+                        break;
+                    default:
+                        goto End;
+                }
+
+                Console.WriteLine("Do you have any math for me? (y/n)");
+                temp = Console.ReadLine();
+                Temp:
+                if(temp == "y")
+                {
+                    goto StartA;
+                } else if(temp == "n")
+                {
+                    goto End;
+                }
+                else
+                {
+                    Console.WriteLine("Wrong input, please check again");
+                    temp = Console.ReadLine();
+                    goto Temp;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Something's wrong. Please check the message:");
+                Console.WriteLine(e.Message);
+            }
+        End:;
+        }
+
         public static void Test()
         {
             //double[] a = new double() { null, 121212.2, 23232, 232354 };
@@ -252,15 +394,9 @@ namespace ConsoleTestApp
 
         static void Main(string[] args)
         {
-            //double b = 322.2;
-            //List<Double> a = new List<double>(){ 1.5, 1.6, 16, 56, 322, 96, -1.5 };
-            //a.Add(b);
-            //foreach(var r in a)
-            //{
-            //    Console.Write(r + " ");
-            //}
-            //Console.WriteLine();
-            //LargestNumber(a);
+            SimpleCaculate();
+            //var a = 16;
+            //a = Sqr(a);
         }
 
     }
