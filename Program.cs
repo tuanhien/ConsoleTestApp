@@ -10,10 +10,8 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-            LoopFunction.DisplayAsterisk();
-            //var a = 16;
-            //a = Sqr(a);
+            LoopFunction.Reverse();
+            //LoginFunction.LoginUser();
         }
-
     }
 }
