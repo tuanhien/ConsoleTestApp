@@ -186,7 +186,7 @@ namespace ConsoleTestApp
         //Write a program in C# Sharp to print a string in reverse order
         //Input a string to reverse : Welcome
         //Expect output: emocleW
-        public static void Reverse()
+        public static void ReverseString()
         {
             ArrayList arrTemp = new ArrayList();
             Console.Write("Input string: ");

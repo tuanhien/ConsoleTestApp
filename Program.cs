@@ -10,7 +10,7 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-            LoopFunction.Reverse();
+            LoopFunction.ReverseString();
             //LoginFunction.LoginUser();
         }
     }
