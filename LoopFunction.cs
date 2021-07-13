@@ -200,5 +200,23 @@ namespace ConsoleTestApp
                 Console.Write(r);
             }
         }
+
+        //Write a C# Sharp program to display alphabet pattern like 'Z' with an asterisk.
+        public static void ZAsterisk()
+        {
+            int row, column;
+            for (row = 0; row <= 6; row++)
+            {
+                for (column = 0; column <= 6; column++)
+                {
+                    if (((row == 0 || row == 6) && column >= 0 && column <= 6) || row + column == 6)
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.Write("\n");
+            }
+            Console.Write("\n");
+        }
     }
 }
