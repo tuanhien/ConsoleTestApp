@@ -59,5 +59,45 @@ namespace ConsoleTestApp
                 Console.Write(r + " ");
             }
         }
+
+        //Write a program in C# Sharp to count the frequency of each element of an array
+        public static void Exercise8()
+        {
+            int temp;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            List<int> arrTemp = new List<int>();
+            for(int i = 0; i < arrInput.Count - 1; i++)
+            {
+                arrTemp.Add(arrInput[i]);
+                for(int j = i + 1; j < arrInput.Count; j++)
+                {
+                    if(arrInput[i] == arrInput[j])
+                    {
+                        arrTemp.Add(arrInput[j]);
+                        arrInput.RemoveAt(j);
+                        j--;
+                    }
+                }
+                if(arrInput[arrInput.Count - 1] == arrTemp[0])
+                {
+                    arrTemp.Add(arrInput[arrInput.Count - 1]);
+                }
+                Console.WriteLine($"{arrTemp[0]} occurs {arrTemp.Count} times");
+                arrTemp.Clear();
+            }
+            if (arrInput.Count == 1)
+            {
+                Console.WriteLine($"{arrInput[0]} occurs 1 times");
+            }
+        }
     }
 }
