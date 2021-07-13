@@ -99,5 +99,12 @@ namespace ConsoleTestApp
                 Console.WriteLine($"{arrInput[0]} occurs 1 times");
             }
         }
+
+        //Write a C# Sharp program to re-arrange the elements in a given array of numbers
+        //and check the numbers are consecutive or not
+        public static void Exercise36(List<int> arrInput)
+        {
+            
+        }
     }
 }
