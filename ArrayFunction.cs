@@ -28,7 +28,36 @@ namespace ConsoleTestApp
         //Write a program in C# Sharp to print all unique elements in an array
         public static void Exercise6()
         {
-            
+            int temp;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            while(arrInput.Count > 2)
+            {
+                for( int i = 0; i < arrInput.Count - 1; i++)
+                {
+                    for(int j = i+1; j < arrInput.Count; j++)
+                    {
+                        if(arrInput[i] == arrInput[j])
+                        {
+                            arrInput.RemoveAt(i);
+                            arrInput.RemoveAt(j-1);
+                        }
+                    }
+                }
+            }
+            Console.WriteLine("The unique elements found in the array are: ");
+            foreach(var r in arrInput)
+            {
+                Console.Write(r + " ");
+            }
         }
     }
 }
