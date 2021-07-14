@@ -130,6 +130,141 @@ namespace ConsoleTestApp
             Console.Write("Minimum element is: {0}\n\n", minValue);
         }
 
+        //Write a program in C# Sharp to insert New value in the array (sorted list )
+        public static void Exercise13()
+        {
+            int temp;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+            Console.WriteLine("The exist array list is: ");
+            foreach(var r in arrInput)
+            {
+                Console.Write(r + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Input the value to be inserted: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            arrInput.Add(temp);
+
+            for(int i = 0; i < arrInput.Count - 1; i++)
+            {
+                for(int j = i + 1; j < arrInput.Count; j++)
+                {
+                    if (arrInput[i] > arrInput[j])
+                    {
+                        int t = arrInput[i];
+                        arrInput[i] = arrInput[j];
+                        arrInput[j] = t;
+                    }
+                }
+            }
+
+            Console.WriteLine("After Insert the list is : ");
+            foreach (var r in arrInput)
+            {
+                Console.Write(r + " ");
+            }
+        }
+
+        //Write a program in C# Sharp to insert New value in the array (unsorted list )
+        public static void Exercise14()
+        {
+            int temp, temp2;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            Console.WriteLine("Input the value to be inserted: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Input the Position, where the value to be inserted: ");
+            temp2 = Convert.ToInt32(Console.ReadLine());
+            
+            for(int i = 0; i < arrInput.Count; i++)
+            {
+                if(temp2 == i)
+                {
+                    arrInput.Insert(temp2, temp);
+                }
+            }
+            Console.WriteLine("After Insert the element the new list is: ");
+            foreach (var r in arrInput)
+            {
+                Console.Write(r + " ");
+            }
+        }
+
+        //Write a program in C# Sharp to find the second largest element in an array
+        public static void Exercise16()
+        {
+            int temp;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            for(int i = 0; i < arrInput.Count-1; i++)
+            {
+                for(int j = i + 1; j < arrInput.Count; j++)
+                {
+                    if (arrInput[i] > arrInput[j])
+                    {
+                        int t = arrInput[i];
+                        arrInput[i] = arrInput[j];
+                        arrInput[j] = t;
+                    }
+                }
+            }
+
+            Console.Write("The Second largest element in the array is: {0}", arrInput[arrInput.Count - 2]);
+        }
+
+        //Write a program in C# Sharp for a 2D array of size 3x3 and print the matrix
+        public static void Exercise18()
+        {
+            int x, y;
+            Console.Write("Input number of rows: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Input number of rows: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            int[,] arrInput = new int[x,y];
+            Console.WriteLine("Input elements in the matrix: ");
+
+            for(int i = 0; i < x; i++)
+                for(int j = 0; j < y; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput[i, j] = int.Parse(Console.ReadLine());
+                }
+            Console.WriteLine("The matrix is: ");
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write($"{arrInput.GetValue(i, j)} ");
+                }
+                Console.WriteLine();
+            }   
+        }
+
         //Write a C# Sharp program to re-arrange the elements in a given array of numbers
         //and check the numbers are consecutive or not
         public static void Exercise36(ArrayList arrInput)
