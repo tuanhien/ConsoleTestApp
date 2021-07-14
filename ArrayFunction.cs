@@ -243,7 +243,7 @@ namespace ConsoleTestApp
             int x, y;
             Console.Write("Input number of rows: ");
             x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Input number of rows: ");
+            Console.Write("Input number of columns: ");
             y = Convert.ToInt32(Console.ReadLine());
             int[,] arrInput = new int[x,y];
             Console.WriteLine("Input elements in the matrix: ");
