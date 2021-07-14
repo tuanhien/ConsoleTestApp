@@ -98,6 +98,38 @@ namespace ConsoleTestApp
             }
         }
 
+        //Write a program in C# Sharp to find maximum and minimum element in an array
+        public static void Exercise9()
+        {
+            int temp, maxValue, minValue;
+            Console.Write("Input the number of elements to be stored in the array: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            List<int> arrInput = new List<int>();
+            Console.WriteLine($"Input {temp} elements in the array: ");
+            for (int i = 0; i < temp; i++)
+            {
+                Console.Write("element - {0}: ", i);
+                arrInput.Add(Convert.ToInt32(Console.ReadLine()));
+            }
+
+            maxValue = arrInput[0];
+            minValue = arrInput[0];
+            for(int i = 0; i < arrInput.Count; i++)
+            {
+                if(maxValue < arrInput[i])
+                {
+                    maxValue = arrInput[i];
+                }
+                if(minValue > arrInput[i])
+                {
+                    minValue = arrInput[i];
+                }
+            }
+
+            Console.Write("Maximum element is: {0}\n", maxValue);
+            Console.Write("Minimum element is: {0}\n\n", minValue);
+        }
+
         //Write a C# Sharp program to re-arrange the elements in a given array of numbers
         //and check the numbers are consecutive or not
         public static void Exercise36(ArrayList arrInput)
