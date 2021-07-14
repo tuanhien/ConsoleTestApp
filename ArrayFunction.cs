@@ -74,29 +74,27 @@ namespace ConsoleTestApp
                 arrInput.Add(Convert.ToInt32(Console.ReadLine()));
             }
 
-            List<int> arrTemp = new List<int>();
-            for(int i = 0; i < arrInput.Count - 1; i++)
+            Hashtable htTemp = new Hashtable();
+
+            for (int i = 0; i < arrInput.Count; i++)  
             {
-                arrTemp.Add(arrInput[i]);
-                for(int j = i + 1; j < arrInput.Count; j++)
+                int t = 1;
+                if (htTemp.Count > 0 && htTemp.ContainsKey(arrInput[i]))
                 {
-                    if(arrInput[i] == arrInput[j])
-                    {
-                        arrTemp.Add(arrInput[j]);
-                        arrInput.RemoveAt(j);
-                        j--;
-                    }
+                    t = Convert.ToInt32(htTemp[arrInput[i]]);
+                    t++;
+                    htTemp[arrInput[i]] = t;
                 }
-                if(arrInput[arrInput.Count - 1] == arrTemp[0])
+                else
                 {
-                    arrTemp.Add(arrInput[arrInput.Count - 1]);
+                    htTemp.Add(arrInput[i], t);
                 }
-                Console.WriteLine($"{arrTemp[0]} occurs {arrTemp.Count} times");
-                arrTemp.Clear();
             }
-            if (arrInput.Count == 1)
+
+            Console.Write("Frequency of all elements of array: \n");
+            foreach(DictionaryEntry r in htTemp)
             {
-                Console.WriteLine($"{arrInput[0]} occurs 1 times");
+                Console.Write($"{r.Key} occurs {r.Value} times\n");
             }
         }
 
