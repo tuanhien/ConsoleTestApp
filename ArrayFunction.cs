@@ -259,15 +259,91 @@ namespace ConsoleTestApp
             {
                 for (int j = 0; j < y; j++)
                 {
-                    Console.Write($"{arrInput.GetValue(i, j)} ");
+                    Console.Write(arrInput.GetValue(i, j));
                 }
                 Console.WriteLine();
             }   
         }
 
-        //Write a C# Sharp program to re-arrange the elements in a given array of numbers
-        //and check the numbers are consecutive or not
-        public static void Exercise36(ArrayList arrInput)
+        //Write a program in C# Sharp for addition of two Matrices of same size
+        public static void Exercise19()
+        {
+            int x, y;
+            Console.Write("Input number of rows: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Input number of columns: ");
+            y = Convert.ToInt32(Console.ReadLine());
+            int[,] arrInput1 = new int[x, y];
+            int[,] arrInput2 = new int[x, y];
+            int[,] arrResult = new int[x, y];
+            Console.WriteLine("Input elements in the first matrix: ");
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput1[i, j] = int.Parse(Console.ReadLine());
+                }
+
+            Console.WriteLine("Input elements in the second matrix: ");
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput2[i, j] = int.Parse(Console.ReadLine());
+                }
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    arrResult[i, j] = arrInput1[i, j] + arrInput2[i, j];
+                }
+
+            Console.WriteLine("The Addition of two matrix is: ");
+            for (int i = 0; i < x; i++) 
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write(arrResult[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+        }
+
+        //Write a program in C# Sharp to find sum of right diagonals of a matrix
+        public static void Exercise23()
+        {
+            int x, y;
+            Console.Write("Input the size of the square matrix: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            int[,] arrInput = new int[x, x];
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < x; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput[i, j] = int.Parse(Console.ReadLine());
+                }
+
+            int SumOfarrInput = 0;
+            int temp = x - 1;
+            for (int i = 0; i < x; i++)
+            {
+                for(int j = temp; j > -1; j--)
+                {
+                    SumOfarrInput += arrInput[i, temp];
+                    temp--;
+                    break;
+                }
+            }
+
+            Console.Write("Addition of the right Diagonal elements is: {0}", SumOfarrInput);
+        }
+
+            //Write a C# Sharp program to re-arrange the elements in a given array of numbers
+            //and check the numbers are consecutive or not
+            public static void Exercise36(ArrayList arrInput)
         {
             foreach(var r in arrInput)
             {
