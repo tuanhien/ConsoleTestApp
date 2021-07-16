@@ -10,7 +10,7 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-            ArrayFunction.Exercise23();
+            ArrayFunction.Exercise25();
             //LoopFunction.ZAsterisk();
             //LoginFunction.LoginUser();
         }

@@ -337,13 +337,49 @@ namespace ConsoleTestApp
                     break;
                 }
             }
-
             Console.Write("Addition of the right Diagonal elements is: {0}", SumOfarrInput);
         }
 
-            //Write a C# Sharp program to re-arrange the elements in a given array of numbers
-            //and check the numbers are consecutive or not
-            public static void Exercise36(ArrayList arrInput)
+        //Write a program in C# Sharp to find sum of rows an columns of a Matrix
+        public static void Exercise25()
+        {
+            int x, n;
+            Console.Write("Input the size of the square matrix: ");
+            x = Convert.ToInt32(Console.ReadLine());
+            int[,] arrInput = new int[x, x];
+
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < x; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput[i, j] = int.Parse(Console.ReadLine());
+                }
+            int SumOfRows = 0;
+            int[] arrTemp = new int[x];
+
+            Console.WriteLine("The sum or rows and columns of the matrix is: ");
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    SumOfRows += arrInput[i, j];
+                    Console.Write(arrInput[i, j] + " ");
+                    arrTemp[j] = arrTemp[j] + arrInput[j, i];
+                }
+                Console.Write(SumOfRows);
+                SumOfRows = 0;
+                Console.WriteLine();
+            }
+
+            foreach (int r in arrTemp)
+            {
+                Console.Write(r + " ");
+            }
+        }
+
+        //Write a C# Sharp program to re-arrange the elements in a given array of numbers
+        //and check the numbers are consecutive or not
+        public static void Exercise36(ArrayList arrInput)
         {
             foreach(var r in arrInput)
             {
@@ -353,5 +389,8 @@ namespace ConsoleTestApp
                 //}
             }
         }
+
+        public static void Test()
+        { }
     }
 }
