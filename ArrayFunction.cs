@@ -343,7 +343,7 @@ namespace ConsoleTestApp
         //Write a program in C# Sharp to find sum of rows an columns of a Matrix
         public static void Exercise25()
         {
-            int x, n;
+            int x;
             Console.Write("Input the size of the square matrix: ");
             x = Convert.ToInt32(Console.ReadLine());
             int[,] arrInput = new int[x, x];
