@@ -364,7 +364,7 @@ namespace ConsoleTestApp
                 {
                     SumOfRows += arrInput[i, j];
                     Console.Write(arrInput[i, j] + " ");
-                    arrTemp[j] = arrTemp[j] + arrInput[j, i];
+                    arrTemp[j] = arrTemp[j] + arrInput[i, j];
                 }
                 Console.Write(SumOfRows);
                 SumOfRows = 0;
