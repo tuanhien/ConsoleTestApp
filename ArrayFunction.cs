@@ -377,6 +377,74 @@ namespace ConsoleTestApp
             }
         }
 
+        //Write a program in C# Sharp to accept two matrices and check whether they are equal
+        public static void Exercise30()
+        {
+            int x, y;
+            string temp = "";
+            Console.Write("Input Rows and Columns of the 1st matrix: ");
+            temp = Console.ReadLine();
+            x = Convert.ToInt32(temp.Substring(0, 1));
+            y = Convert.ToInt32(temp.Substring(1, 2).Trim());
+            int[,] arrInput1 = new int[x, y];
+
+            int a, b;
+            Console.Write("Input Rows and Columns of the 2nd matrix: ");
+            temp = Console.ReadLine();
+            a = Convert.ToInt32(temp.Substring(0, 1));
+            b = Convert.ToInt32(temp.Substring(1, 2).Trim());
+            int[,] arrInput2 = new int[a, b];
+            List<int> arrCompare1 = new List<int>(x + y);
+            List<int> arrCompare2 = new List<int>(a + b);
+
+            Console.WriteLine("Input elements in the first matrix: ");
+            for (int i = 0; i < x; i++)
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput1[i, j] = int.Parse(Console.ReadLine());
+                    arrCompare1.Add(arrInput1[i, j]);
+                }
+
+            Console.WriteLine("Input elements in the second matrix: ");
+            for (int i = 0; i < a; i++)
+                for (int j = 0; j < b; j++)
+                {
+                    Console.Write($"element - [{i},{j}]: ");
+                    arrInput2[i, j] = int.Parse(Console.ReadLine());
+                    arrCompare2.Add(arrInput2[i, j]);
+                }
+            if(x == a && y == b)
+            {
+                Console.WriteLine("The Matrices can be compared:");
+                for(int i = 0; i < arrCompare1.Count; i++)
+                {
+                    if(arrCompare1[i] == arrCompare2[i])
+                    {
+                        if(i == arrCompare1.Count - 1)
+                        {
+                            Console.WriteLine("Two matrices are equal.");
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine(new Exception());
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("The Matrices can't be compared");
+            }
+        }
+
+        //Write a C# Sharp program to get only the odd values from a given array of integers
+        public static void Exercise32()
+        {
+
+        }
+
         //Write a C# Sharp program to re-arrange the elements in a given array of numbers
         //and check the numbers are consecutive or not
         public static void Exercise36(ArrayList arrInput)
