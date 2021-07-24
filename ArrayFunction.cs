@@ -442,23 +442,115 @@ namespace ConsoleTestApp
         //Write a C# Sharp program to get only the odd values from a given array of integers
         public static void Exercise32()
         {
+            Console.Write("Input an array of interger: ");
+            string temp = Console.ReadLine();
+            temp = temp.Trim();
+            
+            List<int> arrInput = new List<int>();
+            foreach (var r in temp.Split(' '))
+            {
+                if(r == "" || r == " "){}
+                else
+                {
+                    arrInput.Add(Convert.ToInt32(r));
+                }
+            }
+            
+            for(int i = 0; i < arrInput.Count; i++)
+            {
+                if(arrInput[i] % 2 == 0)
+                {
+                    arrInput.Remove(arrInput[i]);
+                }
+            }
 
+            foreach(var r in arrInput)
+            {
+                Console.Write(r + " ");
+            }
+        }
+
+        //Write a C# Sharp program to remove all duplicate elements from a given array and returns a new array
+        public static void Exercise33()
+        {
+            Console.Write("Input a string to test: ");
+            string temp = Console.ReadLine();
+            temp = temp.Trim();
+
+            List<string> arrInput = new List<string>();
+            foreach(var r in temp.Split(' '))
+            {
+                if(r == "" || r == " ") { }
+                else
+                {
+                    arrInput.Add(r);
+                }
+            }
+
+            List<string> arrOutput = new List<string>();
+            foreach(var r in arrInput)
+            {
+                arrOutput.Add(r);
+            }
+
+            for (int i = 0; i < arrOutput.Count - 1; i++)
+            {
+                for(int j = i + 1; j < arrOutput.Count; j++)
+                {
+                    if(arrOutput[i] == arrOutput[j])
+                    {
+                        arrOutput.RemoveAt(j);
+                    }
+                }
+            }
+
+            Console.Write("Input:\n");
+            foreach (var r in arrInput)
+            {
+                Console.WriteLine(r);
+            }
+
+            Console.Write("Output:\n");
+            foreach (var r in arrOutput)
+            {
+                Console.WriteLine(r);
+            }
         }
 
         //Write a C# Sharp program to re-arrange the elements in a given array of numbers
         //and check the numbers are consecutive or not
-        public static void Exercise36(ArrayList arrInput)
+        public static void Exercise36()
         {
-            foreach(var r in arrInput)
+            Console.Write("Input an array of number: ");
+            string temp = Console.ReadLine();
+            temp = temp.Trim();
+            List<int> arrInput = new List<int>();
+            foreach(var r in temp)
             {
-                //if (!int.TryParse(r, out int result))
-                //{
-
-                //}
+                if(r == ' '){}
+                else
+                {
+                    arrInput.Add(r);
+                }
             }
-        }
 
-        public static void Test()
-        { }
+            for(int i = 0; i < arrInput.Count - 1; i++)
+            {
+                for(int j = i + 1; j < arrInput.Count; j++)
+                {
+                    if(arrInput[j] == arrInput[i] + 1)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("The input string of number aren't consecutive");
+                        goto End;
+                    }
+                }
+            }
+            Console.Write("The input string of number are consecutive");
+        End:;
+        }
     }
 }
