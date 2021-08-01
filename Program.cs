@@ -10,7 +10,9 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-            ArrayFunction.Exercise36();
+
+            //int[] a = { 15, 7, 2, 11, 8, 9 };
+            //SearchingAndSortingFunction.InsertionSort(a);
             //LoopFunction.ZAsterisk();
             //LoginFunction.LoginUser();
         }
