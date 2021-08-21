@@ -8,8 +8,6 @@ namespace ConsoleTestApp
     {
         //Write a program in C# Sharp to print individual characters of the string in reverse order
         public static void Exercise4()
-        {
-            
-        }
+        {}
     }
 }
