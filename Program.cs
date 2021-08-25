@@ -10,11 +10,11 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-
-            //int[] a = { 15, 7, 2, 11, 8, 9 };
-            //SearchingAndSortingFunction.InsertionSort(a);
-            //LoopFunction.ZAsterisk();
-            //LoginFunction.LoginUser();
+            int temp, result;
+            Console.WriteLine("Input a number: ");
+            temp = Convert.ToInt32(Console.ReadLine());
+            result = FunctionExercise.Exercise11(temp);
+            Console.WriteLine(result);
         }
     }
 }
