@@ -10,11 +10,11 @@ namespace ConsoleTestApp
     {
         public static void Main(string[] args)
         {
-            int temp, result;
-            Console.WriteLine("Input a number: ");
-            temp = Convert.ToInt32(Console.ReadLine());
-            result = FunctionExercise.Exercise11(temp);
-            Console.WriteLine(result);
+            //int temp, result;
+            //Console.Write("Input a number: ");
+            //temp = Convert.ToInt32(Console.ReadLine());
+            //RecursionFunction.Exercise1(temp,1);
+            RecursionFunction.Exercise5(12345,0);
         }
     }
 }
