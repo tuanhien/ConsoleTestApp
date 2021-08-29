@@ -14,7 +14,8 @@ namespace ConsoleTestApp
             //Console.Write("Input a number: ");
             //temp = Convert.ToInt32(Console.ReadLine());
             //RecursionFunction.Exercise1(temp,1);
-            RecursionFunction.Exercise5(12345,0);
+            //RecursionFunction.Exercise15(5,3);
+            Console.Write(RecursionFunction.GiaiThua(5));
         }
     }
 }

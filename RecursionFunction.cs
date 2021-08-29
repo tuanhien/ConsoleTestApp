@@ -79,14 +79,76 @@ namespace ConsoleTestApp
         }
 
         //Write a program in C to print even or odd numbers in a given range using recursion
-        public static int Exercise6(int a) 
+        public static int Exercise6(int a, int count, bool boInput)
         {
-            if(a <= 1)
+            if (boInput)
             {
-                Console.Write(a);
+                if(count == a)
+                {
+                    if(count % 2 == 0)
+                    Console.Write(count);
+                    return count;
+                }
+                if(count % 2 == 0)
+                {
+                    Console.Write(count + " ");
+                    count++;
+                    Exercise6(a, count, boInput);
+                    return count;
+                }
+                else
+                {
+                    count++;
+                    Exercise6(a, count, boInput);
+                    return count;
+                }
             }
+            else
+            {
+                if (count == a)
+                {
+                    if (count % 2 != 0)
+                        Console.Write(count);
+                    return count;
+                }
+                if (count % 2 != 0)
+                {
+                    Console.Write(count + " ");
+                    count++;
+                    Exercise6(a, count, boInput);
+                    return count;
+                }else
+                {
+                    count++;
+                    Exercise6(a, count, boInput);
+                    return count;
+                }
+            }
+        }
 
+        //Write a program in C# Sharp to calculate the power of any number using recursion
+        public static int Exercise15(int x, int y)
+        {
+            if (y == 0)
+                return 1;
+            else
+            {
+                Console.Write(x);
+                return x * Exercise15(x, y - 1);
+            }
+        }
 
+        //Viet chuong trinh tinh giai thua
+        public static int GiaiThua(int a)
+        {
+            if (a == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return a * GiaiThua(a - 1);
+            }
         }
     }
 }
