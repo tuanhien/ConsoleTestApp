@@ -126,6 +126,23 @@ namespace ConsoleTestApp
             }
         }
 
+        //Write a program in C# Sharp to get the reverse of a string using recursion
+        public static string Exercise14(string inputString)
+        {
+            if(inputString.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                string temp = inputString.Substring(inputString.Length - 1, 1);
+                Console.Write(temp);
+                inputString = inputString.Substring(0, inputString.Length - 1);
+                Exercise14(inputString);
+            }
+            return inputString;
+        }
+
         //Write a program in C# Sharp to calculate the power of any number using recursion
         public static int Exercise15(int x, int y)
         {

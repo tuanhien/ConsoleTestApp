@@ -15,7 +15,8 @@ namespace ConsoleTestApp
             //temp = Convert.ToInt32(Console.ReadLine());
             //RecursionFunction.Exercise1(temp,1);
             //RecursionFunction.Exercise15(5,3);
-            Console.Write(RecursionFunction.GiaiThua(5));
+            //Console.Write(RecursionFunction.GiaiThua(5));
+            RecursionFunction.Exercise14("w3resource");
         }
     }
 }
