@@ -29,5 +29,26 @@ namespace ConsoleTestApp
             string[] arrInput = inputString.Trim().Split(' ');
             Console.WriteLine("The number of words in string is: " + arrInput.Length);
         }
+
+        public static void Test()
+        {
+            string stTest = "Cao Thi Hoang Ngoc";
+            string[] arrTest = stTest.Split(' ');
+            if(arrTest.Length > 2)
+            {
+                stTest = null;
+                int count = 0;
+                for (int i = arrTest.Length - 2; i < arrTest.Length; i++)
+                {
+                    stTest += arrTest[i] + " ";
+                    count++;
+                    if(count >= 2)
+                    {
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine(stTest);
+        }
     }
 }

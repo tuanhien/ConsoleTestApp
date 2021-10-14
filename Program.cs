@@ -16,7 +16,8 @@ namespace ConsoleTestApp
             //RecursionFunction.Exercise1(temp,1);
             //RecursionFunction.Exercise15(5,3);
             //Console.Write(RecursionFunction.GiaiThua(5));
-            RecursionFunction.Exercise14("w3resource");
+            //RecursionFunction.Exercise14("w3resource");
+            StringFunction.Test();
         }
     }
 }
