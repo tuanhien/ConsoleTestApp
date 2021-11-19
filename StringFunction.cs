@@ -23,7 +23,7 @@ namespace ConsoleTestApp
         //Write a program in C# Sharp to count the total number of words in a string.
         public static void Exercise5()
         {
-            string inputString, temp;
+            string inputString;
             Console.Write("Input String: ");
             inputString = Console.ReadLine();
             string[] arrInput = inputString.Trim().Split(' ');

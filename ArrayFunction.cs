@@ -314,7 +314,7 @@ namespace ConsoleTestApp
         //Write a program in C# Sharp to find sum of right diagonals of a matrix
         public static void Exercise23()
         {
-            int x, y;
+            int x;
             Console.Write("Input the size of the square matrix: ");
             x = Convert.ToInt32(Console.ReadLine());
             int[,] arrInput = new int[x, x];

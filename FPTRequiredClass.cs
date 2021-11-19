@@ -11,7 +11,6 @@ namespace ConsoleTestApp
         public static void CountCharInput(string a)
         {
             ArrayList arrTemp = new ArrayList();
-
             Console.WriteLine($"Chuoi truoc khi dem co {a.Length} ki tu");
             var b = a.Replace(" ", "");
             while (b.Length > 0)
