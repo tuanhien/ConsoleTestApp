@@ -63,5 +63,41 @@ namespace ConsoleTestApp
             }
             Console.Write(datetime.ToString("yyyy/MM/dd"));
         }
+
+        //Write a program in C# Sharp to print the name of month in full starting from current date
+        public static void Exercise51()
+        {
+            DateTime today = DateTime.Today;
+            Console.Write("The date of Today: {0}\n", today.ToString("yyyy/MM/dd"));
+            Console.Write("The twelve months are: \n");
+            List<string> arrMonths = new List<string>();
+            for (int i = 0; i < 12; i++)
+            {
+                arrMonths.Insert(i,Convert.ToString(today.AddMonths(i).ToString("MMMM")));
+            }
+
+            foreach (string r in arrMonths)
+            {
+                Console.WriteLine(r);
+            }
+        }
+
+        //Write a C# Sharp program to display the Day properties
+        //(year, month, day, hour, minute, second, millisecond etc.)
+        public static void Exercise2()
+        {
+            string today = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss.FF");
+            Console.Write(today);
+        }
+
+        //Write a C# Sharp program to retrieve the current date
+        public static void Exercise8()
+        {
+            DateTime time = new DateTime(2022,02,25,12,00,00);
+            Console.Write("General format {0}\n",time);
+            Console.WriteLine("Display the date in a variety of formats:");
+            Console.WriteLine(time.ToString("MM/dd/yyyy"));
+            Console.WriteLine(time.DayOfWeek + ", " + time.ToString("MMMM dd, yyyy"));
+        }
     }
 }

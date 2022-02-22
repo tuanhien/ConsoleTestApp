@@ -6,6 +6,23 @@ namespace ConsoleTestApp
 {
     public class RecursionFunction
     {
+        //Write a C# programm to print n number of Fibonacci
+        public static int Fibo(int n)
+        {
+            if(n == 0)
+            {
+                Console.Write("0 1 ");
+                return n;
+            }
+            else
+            {
+                int total;
+                total = Fibo(n - 2) + Fibo(n - 1);
+                Console.Write(total + " ");
+                return total;
+            }
+        }
+
         //Write a program in C# Sharp to print the first n natural number using recursion
         public static int Exercise1(int n, int count)
         {
