@@ -7,19 +7,56 @@ namespace ConsoleTestApp
     public class RecursionFunction
     {
         //Write a C# programm to print n number of Fibonacci
-        public static int Fibo(int n)
+        //Write this in MAIN
+        //public static void Fibo()
+        //{
+        //    int numberOne = 0;
+        //    int numberTwo = 1;
+        //    Console.Write("Input number n: \n");
+        //    int n = int.Parse(Console.ReadLine());
+        //    Console.Write("Day Fibo co dang: " + numberOne + " " + numberTwo);
+        //    for (int i = 2; i < n; i++)
+        //    {
+        //        int total = numberOne + numberTwo;
+        //        Console.Write(" " + total);
+        //        numberOne = numberTwo;
+        //        numberTwo = total;
+        //    }
+        //}
+
+        //Write a C# programm to print number n of Fibonacci
+        public static int FiboN(int n)
         {
-            if(n == 0)
+
+            if (n == 1)
             {
-                Console.Write("0 1 ");
+                return 0;
+            }
+            else if (n == 2)
+            {
+                return 1;
+            }
+            else
+            {
+                n = FiboN(n - 1) + FiboN(n - 2);
+                return n;
+            }
+        }
+
+        //Write a C# programm to print n number of Fibonacci
+        public static int InFibonacci(int n)
+        {
+            if(n == 1)
+            {
+                return n;
+            }
+            else if(n == 0)
+            {
                 return n;
             }
             else
             {
-                int total;
-                total = Fibo(n - 2) + Fibo(n - 1);
-                Console.Write(total + " ");
-                return total;
+                return InFibonacci(n - 1) + InFibonacci(n - 2);
             }
         }
 
